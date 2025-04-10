@@ -2,6 +2,12 @@
 @section('content')
 
 <div class="my-4">
+    @if (session('success'))
+        <div class="w-full px-6 py-3 mb-4 rounded-lg bg-green-100 border border-green-400 text-green-700">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         @foreach ($flights as $flight)
         <div class="bg-gray-200 rounded-lg px-4 py-3 my-8">

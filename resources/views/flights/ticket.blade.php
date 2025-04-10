@@ -5,6 +5,12 @@
 @section('content')
 
 <div class="my-4">
+    @if (session('success'))
+        <div class="w-full px-6 py-3 mb-4 rounded-lg bg-green-100 border border-green-400 text-green-700">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="flex justify-around">
         <h1 class="text-3xl font-bold">Ticket Details for {{ $flight->flight_code }}</h1>
         <div class="flex justify-between gap-4">
@@ -28,7 +34,7 @@
 
     <h1 class="text-3xl font-bold mt-8 mb-4">Passangers list</h1>
     <div class="flex flex-col items-center">
-        <table class="w-[90rem] text-base text-left rtl:text-right">
+        <table class="w-3/4 max-w-[90rem] text-base text-left rtl:text-right">
             <thead>
                 <tr>
                     <th>No.</th>
